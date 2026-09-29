@@ -570,6 +570,11 @@ mod tests {
         assert!(text.ends_with("..."));
     }
 
+    #[test]
+    fn extract_body_text_zero_limit_returns_only_truncation_marker() {
+        assert_eq!(extract_body_text("<p>content</p>", 0), "...");
+    }
+
     // ── Config toggle ───────────────────────────────────────────────
 
     #[tokio::test]
