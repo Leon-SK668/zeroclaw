@@ -16311,6 +16311,10 @@ mod tests {
             "Hello @MyBot, can you help?",
             "mybot"
         ));
+        assert!(TelegramChannel::contains_bot_mention(
+            "你好 @mybot，请处理",
+            "mybot"
+        ));
     }
 
     #[test]
