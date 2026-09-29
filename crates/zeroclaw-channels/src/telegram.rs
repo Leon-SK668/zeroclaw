@@ -16294,6 +16294,7 @@ mod tests {
 
     #[test]
     fn telegram_contains_bot_mention_finds_mention() {
+        assert!(TelegramChannel::contains_bot_mention("Hello @mybot", "@mybot"));
         assert!(TelegramChannel::contains_bot_mention(
             "Hello @mybot",
             "mybot"
