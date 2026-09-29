@@ -3154,6 +3154,17 @@ mod tests {
     }
 
     #[test]
+    fn mention_after_unicode_text_is_detected_without_byte_offset_errors() {
+        let post = json!({});
+        assert!(contains_bot_mention_mm(
+            "你好 @mybot，请处理",
+            "bot123",
+            "mybot",
+            &post
+        ));
+    }
+
+    #[test]
     fn mention_via_metadata_only() {
         let post = json!({
             "metadata": { "mentions": ["bot123"] }
